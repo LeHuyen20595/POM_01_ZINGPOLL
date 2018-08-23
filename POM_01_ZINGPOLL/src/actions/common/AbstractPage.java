@@ -13,13 +13,14 @@ import java.util.Set;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class AbstractPage {
-	protected WebDriver driver;
+	public static WebDriver driver;
 
 	public AbstractPage(WebDriver driver) {
 		this.driver = driver;
@@ -249,6 +250,32 @@ public class AbstractPage {
 	public void executeJavascriptToBrowser() {
 		
 	}
+	
+	public void executeJavascriptToElement() {
+		
+	}
+	
+	public void scrollToBottomPage(JavascriptExecutor js) {
+		js.executeScript("window.scrollBy(0, document.body.scrollHeight)");
+	}
+	
+	public void highlightElement(JavascriptExecutor js, String style, By locator) {
+		WebElement element = driver.findElement(locator);
+		js.executeScript("arguments[0].style.border='" + style +"'", element);
+	}
+	
+	public void scrollToElement(JavascriptExecutor js, By locator) {
+		WebElement element = driver.findElement(locator);
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+	
+	public void removeAttribute(JavascriptExecutor js, By locator, String attribute) {
+		WebElement element = driver.findElement(locator);
+		js.executeScript("arguments[0].removeAttribute('"+ attribute +"');", element);
+	}
+
+	
+	
 	
 	
 	

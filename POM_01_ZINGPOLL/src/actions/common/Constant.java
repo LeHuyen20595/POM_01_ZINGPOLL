@@ -6,8 +6,8 @@ public class Constant {
 	public static final String IEWEBDRIVER = "webdriver.ie.driver";
 
 	// For browser driver
-	public static final String CHROMEDRIVER = ".\\drivers\\chromedriver.exe";
-	public static final String IEDRIVER = ".\\drivers\\chromedriver.exe";
+	public static final String CHROMEDRIVER = ".\\resouces.drivers\\chromedriver.exe";
+	public static final String IEDRIVER = ".\\resouces.drivers\\IEDriverServer.exe";
 
 	// Browser name
 	public static final String CHROMEBROWSER = "Chrome";
